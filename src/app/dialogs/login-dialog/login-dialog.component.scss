@@ -1,0 +1,24 @@
+:host {
+    display: block;
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    display: flex;
+
+    &[mat-dialog-content] {
+        flex-direction: column;
+    }
+
+    &[mat-dialog-actions] {
+        justify-content: space-around;
+    }
+}
+
+.margin-top {
+    margin-top: 20px;
+}
