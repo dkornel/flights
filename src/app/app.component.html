@@ -1,6 +1,11 @@
 <app-navbar></app-navbar>
+
 <app-validation-message
     *ngIf="validationMessage$ | async as validationMessage"
     [validationMessage]="validationMessage"
     (discard)="clearValidationMessage()"
 ></app-validation-message>
+
+<app-viewer>
+    <!-- App Content Here -->
+</app-viewer>
