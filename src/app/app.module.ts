@@ -4,8 +4,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { DialogsModule } from "./dialogs/dialogs.module";
-import { NavbarModule } from "./navbar/navbar.module";
+import { DialogsModule } from "./components/dialogs/dialogs.module";
+import { NavbarModule } from "./components/navbar/navbar.module";
+import { AppValidationMessageModule } from "./components/validation-message/validation-message.module";
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import { NavbarModule } from "./navbar/navbar.module";
         AppRoutingModule,
         BrowserAnimationsModule,
         DialogsModule,
-        NavbarModule
+        NavbarModule,
+        AppValidationMessageModule
     ],
     declarations: [
         AppComponent
