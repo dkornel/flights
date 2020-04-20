@@ -21,6 +21,6 @@ import { LoginDialogComponent } from "./login-dialog/login-dialog.component";
     ],
     exports: [LoginDialogComponent],
     declarations: [LoginDialogComponent],
-    entryComponents: [LoginDialogComponent],
+    entryComponents: [LoginDialogComponent]
 })
 export class DialogsModule {}

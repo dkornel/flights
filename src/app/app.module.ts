@@ -7,6 +7,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ViewerModule } from "./components/viewer/viewer.module";
 import { DialogsModule } from "./components/dialogs/dialogs.module";
 import { NavbarModule } from "./components/navbar/navbar.module";
+import { FlightsModule } from "./components/flights/flights.module";
 import { AppValidationMessageModule } from "./components/validation-message/validation-message.module";
 
 @NgModule({
@@ -17,11 +18,10 @@ import { AppValidationMessageModule } from "./components/validation-message/vali
         DialogsModule,
         NavbarModule,
         AppValidationMessageModule,
-        ViewerModule
+        ViewerModule,
+        FlightsModule
     ],
-    declarations: [
-        AppComponent
-    ],
+    declarations: [AppComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

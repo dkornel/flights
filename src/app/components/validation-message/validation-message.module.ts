@@ -7,6 +7,6 @@ import { AppValidationMessageComponent } from "./validation-message.component";
 @NgModule({
     imports: [MatToolbarModule],
     exports: [AppValidationMessageComponent],
-    declarations: [AppValidationMessageComponent],
+    declarations: [AppValidationMessageComponent]
 })
 export class AppValidationMessageModule {}

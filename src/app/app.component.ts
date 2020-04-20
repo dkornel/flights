@@ -8,14 +8,11 @@ import { AppValidationMessageService } from "./services/validation-message.servi
     styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-
     public get validationMessage$() {
         return this.validationMessageService.validationMessage$;
     }
 
-    constructor(
-        private validationMessageService: AppValidationMessageService
-    ) {}
+    constructor(private validationMessageService: AppValidationMessageService) {}
 
     public clearValidationMessage(): void {
         this.validationMessageService.setValidationMessage("");

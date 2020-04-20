@@ -3,9 +3,9 @@ import { MatDialogRef } from "@angular/material/dialog";
 import { FormControl, Validators, FormGroup } from "@angular/forms";
 
 @Component({
-  selector: "app-login-dialog",
-  templateUrl: "./login-dialog.component.html",
-  styleUrls: ["./login-dialog.component.scss"]
+    selector: "app-login-dialog",
+    templateUrl: "./login-dialog.component.html",
+    styleUrls: ["./login-dialog.component.scss"]
 })
 export class LoginDialogComponent {
     public readonly loginForm = new FormGroup({
@@ -13,9 +13,7 @@ export class LoginDialogComponent {
         password: new FormControl("", [Validators.required])
     });
 
-    constructor(
-        public dialogRef: MatDialogRef<LoginDialogComponent>,
-    ) {}
+    constructor(public dialogRef: MatDialogRef<LoginDialogComponent>) {}
 
     public onConfirm(): void {
         this.dialogRef.close();

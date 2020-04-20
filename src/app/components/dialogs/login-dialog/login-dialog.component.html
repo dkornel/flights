@@ -4,23 +4,14 @@
     <div mat-dialog-content>
         <mat-form-field>
             <mat-label>Email</mat-label>
-            <input
-                type="email"
-                placeholder="Ex. pat@example.com"
-                matInput
-                formControlName="user"
-            />
+            <input type="email" placeholder="Ex. pat@example.com" matInput formControlName="user" />
             <mat-error *ngIf="hasError('required', 'user')">Email is required</mat-error>
             <mat-error *ngIf="hasError('email', 'user')">Please enter a valid email address</mat-error>
         </mat-form-field>
 
         <mat-form-field class="margin-top">
             <mat-label>Password</mat-label>
-            <input
-                type="password"
-                matInput
-                formControlName="password"
-            />
+            <input type="password" matInput formControlName="password" />
             <mat-error *ngIf="hasError('required', 'password')">Password is required</mat-error>
         </mat-form-field>
     </div>
