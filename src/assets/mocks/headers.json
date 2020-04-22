@@ -1,0 +1,13 @@
+{
+    "flight": [
+        "flightNumber",
+        "origin",
+        "destination"
+    ],
+    "airport": [
+        "name",
+        "country",
+        "iataCode",
+        "icaoCode"
+    ]
+}

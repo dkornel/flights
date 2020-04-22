@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "flightNumber": "A10",
+        "origin": "EPWR",
+        "destination": "EDDF"
+    },
+    {
+        "id": 2,
+        "flightNumber": "B20",
+        "origin": "EPWR",
+        "destination": "EDDF"
+    },
+    {
+        "id": 3,
+        "flightNumber": "C30",
+        "origin": "EPWR",
+        "destination": "EDDF"
+    },
+    {
+        "id": 4,
+        "flightNumber": "D40",
+        "origin": "EPWR",
+        "destination": "EDDF"
+    },
+    {
+        "id": 5,
+        "flightNumber": "E50",
+        "origin": "EPWR",
+        "destination": "EDDF"
+    },
+    {
+        "id": 6,
+        "flightNumber": "F60",
+        "origin": "EPWR",
+        "destination": "EDDF"
+    },
+    {
+        "id": 7,
+        "flightNumber": "G70",
+        "origin": "EPWR",
+        "destination": "EDDF"
+    },
+    {
+        "id": 8,
+        "flightNumber": "H80",
+        "origin": "EPWR",
+        "destination": "EDDF"
+    }
+]

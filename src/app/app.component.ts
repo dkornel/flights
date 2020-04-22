@@ -1,4 +1,8 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core";
+
+import { Flight } from "./models/flight.model";
+import { Airport } from "./models/airport.model";
+import { MenuItem } from "./components/navbar/navbar.component";
 import { AppValidationMessageService } from "./services/validation-message.service";
 
 @Component({
@@ -8,6 +12,13 @@ import { AppValidationMessageService } from "./services/validation-message.servi
     styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
+
+    public readonly menuItems: MenuItem[] = [
+        { name: "Flights", objectType: Flight.objectType },
+        { name: "Airports", objectType: Airport.objectType }
+    ];
+    public selectedMenuItem = this.menuItems[0];
+
     public get validationMessage$() {
         return this.validationMessageService.validationMessage$;
     }

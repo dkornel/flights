@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Port Lotniczy Wrocław",
+        "country": "Poland",
+        "iataCode": "WRO",
+        "icaoCode": "EPWR"
+    },
+    {
+        "id": 2,
+        "name": "Lotnisko Chopina w Warszawie",
+        "country": "Poland",
+        "iataCode": "WAW",
+        "icaoCode": "EPWA"
+    }
+]

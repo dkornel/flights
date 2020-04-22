@@ -1,0 +1,14 @@
+<ng-container *ngIf="data$ | async as data">
+    
+    <table mat-table [dataSource]="data.objects">
+
+        <ng-container *ngFor="let columnId of data.headers">
+            <mat-text-column [name]="columnId" [dataAccessor]="getDataValue"></mat-text-column>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="data.headers"></tr>
+        <tr mat-row *matRowDef="let row; columns: data.headers;"></tr>
+
+    </table>
+
+</ng-container>
