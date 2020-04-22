@@ -7,14 +7,10 @@ import { Header } from "../models/header.model";
 import { toClientObjects, mapToObjectHeader } from "../models/object.util";
 import { BaseObject, BaseObjectProperties, ObjectType } from "../models/base.model";
 
-@Injectable({providedIn: "root"})
+@Injectable({ providedIn: "root" })
 export class DataLoadService {
-
-    private cachedHeaders$: Observable<{[objectType: string]: Header}>;
-    private cachedClientObjects = new Map<
-        ObjectType,
-        Observable<BaseObject<BaseObjectProperties>[]>
-    >();
+    private cachedHeaders$: Observable<{ [objectType: string]: Header }>;
+    private cachedClientObjects = new Map<ObjectType, Observable<BaseObject<BaseObjectProperties>[]>>();
 
     constructor(private http: HttpClient) {}
 
@@ -22,10 +18,7 @@ export class DataLoadService {
         if (!this.cachedClientObjects.has(objectType)) {
             this.cachedClientObjects.set(
                 objectType,
-                this.getAll(objectType).pipe(
-                    toClientObjects(objectType),
-                    shareReplay(1)
-                )
+                this.getAll(objectType).pipe(toClientObjects(objectType), shareReplay(1))
             );
         }
         return this.cachedClientObjects.get(objectType);
@@ -33,9 +26,7 @@ export class DataLoadService {
 
     public getHeader(objectType: string) {
         if (this.cachedHeaders$ === undefined) {
-            this.cachedHeaders$ = this.getAll<{[objectType: string]: Header}>(Header.objectType).pipe(
-                shareReplay(1)
-            );
+            this.cachedHeaders$ = this.getAll<{ [objectType: string]: Header }>(Header.objectType).pipe(shareReplay(1));
         }
         return this.cachedHeaders$.pipe(mapToObjectHeader(objectType));
     }

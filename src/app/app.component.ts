@@ -12,7 +12,6 @@ import { AppValidationMessageService } from "./services/validation-message.servi
     styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-
     public readonly menuItems: readonly MenuItem[] = [
         { name: "Flights", objectType: Flight.objectType },
         { name: "Airports", objectType: Airport.objectType }

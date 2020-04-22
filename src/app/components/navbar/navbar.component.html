@@ -1,10 +1,8 @@
 <mat-toolbar color="primary">
     <nav>
-        <a
-            *ngFor="let menuItem of menuItems"
-            mat-button
-            (click)="selectedMenuChange.emit(menuItem)"
-        >{{menuItem.name}}</a>
+        <a *ngFor="let menuItem of menuItems" mat-button (click)="selectedMenuChange.emit(menuItem)">{{
+            menuItem.name
+        }}</a>
         <a mat-stroked-button (click)="openLoginDialog()">Login</a>
     </nav>
 </mat-toolbar>

@@ -16,13 +16,13 @@ export function fromJsonFactory(objectType: string, json: any) {
 }
 
 export function toClientObjects(objectType: string) {
-    return map(json => {
-        return Array.isArray(json) ? json.map(item => fromJsonFactory(objectType, item)) : null;
+    return map((json) => {
+        return Array.isArray(json) ? json.map((item) => fromJsonFactory(objectType, item)) : null;
     });
 }
 
 export function mapToObjectHeader(objectType: string) {
-    return map(json => {
+    return map((json) => {
         return json && json[objectType] ? new Header(json[objectType]) : null;
     });
 }

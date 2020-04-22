@@ -1,7 +1,4 @@
-<app-navbar
-    [menuItems]="menuItems"
-    [(selectedMenu)]="selectedMenuItem"
-></app-navbar>
+<app-navbar [menuItems]="menuItems" [(selectedMenu)]="selectedMenuItem"></app-navbar>
 
 <app-validation-message
     *ngIf="validationMessage$ | async as validationMessage"
@@ -10,7 +7,5 @@
 ></app-validation-message>
 
 <app-viewer>
-    <app-data-grid
-        [objectType]="selectedMenuItem.objectType"
-    ></app-data-grid>
+    <app-data-grid [objectType]="selectedMenuItem.objectType"></app-data-grid>
 </app-viewer>

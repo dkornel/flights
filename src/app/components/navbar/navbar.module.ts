@@ -7,11 +7,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { NavbarComponent } from "./navbar.component";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        MatToolbarModule,
-        MatButtonModule
-    ],
+    imports: [CommonModule, MatToolbarModule, MatButtonModule],
     exports: [NavbarComponent],
     declarations: [NavbarComponent]
 })

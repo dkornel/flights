@@ -16,22 +16,18 @@ interface DataGridObject {
     styleUrls: ["./data-grid.component.scss"]
 })
 export class DataGridComponent implements OnChanges {
-
     @Input() public objectType: string;
 
-    public data$: Observable<{header: Header, objects: DataGridObject[]}>;
+    public data$: Observable<{ header: Header; objects: DataGridObject[] }>;
 
     constructor(private loadService: DataLoadService) {}
 
     public ngOnChanges(changes: SimpleChanges): void {
         if ("objectType" in changes) {
-
-            this.data$ = combineLatest(
-                [
-                    this.loadService.getObjects(this.objectType),
-                    this.loadService.getHeader(this.objectType)
-                ]
-            ).pipe(
+            this.data$ = combineLatest([
+                this.loadService.getObjects(this.objectType),
+                this.loadService.getHeader(this.objectType)
+            ]).pipe(
                 map(([objects, header]) => {
                     return {
                         objects,
