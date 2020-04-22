@@ -1,0 +1,15 @@
+{
+    "flight": {
+        "id": 1,
+        "flightNumber": "Flight Number",
+        "origin": "Origin",
+        "destination": "Destination"
+    },
+    "airport": {
+        "id": 2,
+        "name": "Airport name",
+        "country": "Country",
+        "iataCode": "Iata Code",
+        "icaoCode": "Icao Code"
+    }
+}

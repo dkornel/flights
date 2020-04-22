@@ -2,6 +2,7 @@ import { map } from "rxjs/operators";
 
 import { Flight } from "./flight.model";
 import { Airport } from "./airport.model";
+import { Header } from "./header.model";
 
 export function fromJsonFactory(objectType: string, json: any) {
     switch (objectType) {
@@ -15,9 +16,13 @@ export function fromJsonFactory(objectType: string, json: any) {
 }
 
 export function toClientObjects(objectType: string) {
-    return map((data) => {
-        if (data && Array.isArray(data)) {
-            return data.map(object => fromJsonFactory(objectType, object));
-        }
+    return map(json => {
+        return Array.isArray(json) ? json.map(item => fromJsonFactory(objectType, item)) : null;
+    });
+}
+
+export function mapToObjectHeader(objectType: string) {
+    return map(json => {
+        return json && json[objectType] ? new Header(json[objectType]) : null;
     });
 }

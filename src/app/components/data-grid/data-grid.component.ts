@@ -1,8 +1,13 @@
 import { Component, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { Observable, combineLatest } from "rxjs";
-
-import { DataLoadService } from "src/app/services/data-load.service";
 import { map } from "rxjs/operators";
+
+import { Header } from "src/app/models/header.model";
+import { DataLoadService } from "src/app/services/data-load.service";
+
+interface DataGridObject {
+    getValue(propertyName: string): string | number;
+}
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,7 +19,7 @@ export class DataGridComponent implements OnChanges {
 
     @Input() public objectType: string;
 
-    public data$: Observable<{headers: string[], objects: any[]}>;
+    public data$: Observable<{header: Header, objects: DataGridObject[]}>;
 
     constructor(private loadService: DataLoadService) {}
 
@@ -23,21 +28,21 @@ export class DataGridComponent implements OnChanges {
 
             this.data$ = combineLatest(
                 [
-                    this.loadService.getAllData(this.objectType),
-                    this.loadService.getHeaders(this.objectType)
+                    this.loadService.getObjects(this.objectType),
+                    this.loadService.getHeader(this.objectType)
                 ]
             ).pipe(
-                map(([objects, headers]) => {
+                map(([objects, header]) => {
                     return {
                         objects,
-                        headers
+                        header
                     };
                 })
             );
         }
     }
 
-    public getDataValue(data: any, propertyName: string) {
+    public getDataValue(data: DataGridObject, propertyName: string) {
         return data.getValue(propertyName);
     }
 }

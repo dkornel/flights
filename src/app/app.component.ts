@@ -13,7 +13,7 @@ import { AppValidationMessageService } from "./services/validation-message.servi
 })
 export class AppComponent {
 
-    public readonly menuItems: MenuItem[] = [
+    public readonly menuItems: readonly MenuItem[] = [
         { name: "Flights", objectType: Flight.objectType },
         { name: "Airports", objectType: Airport.objectType }
     ];
@@ -25,7 +25,7 @@ export class AppComponent {
 
     constructor(private validationMessageService: AppValidationMessageService) {}
 
-    public clearValidationMessage(): void {
+    public clearValidationMessage() {
         this.validationMessageService.setValidationMessage("");
     }
 }
