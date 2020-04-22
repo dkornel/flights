@@ -4,6 +4,7 @@ import { map } from "rxjs/operators";
 
 import { Header } from "src/app/models/header.model";
 import { DataLoadService } from "src/app/services/data-load.service";
+import { ObjectType } from "src/app/models/base.model";
 
 interface DataGridObject {
     getValue(propertyName: string): string | number;
@@ -16,7 +17,7 @@ interface DataGridObject {
     styleUrls: ["./data-grid.component.scss"]
 })
 export class DataGridComponent implements OnChanges {
-    @Input() public objectType: string;
+    @Input() public objectType: ObjectType;
 
     public data$: Observable<{ header: Header; objects: DataGridObject[] }>;
 
